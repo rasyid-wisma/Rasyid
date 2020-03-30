@@ -1,27 +1,52 @@
 ﻿using System;
 
-namespace TheSuperComputer
+namespace TheCoffeMechine
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Monitor lgMonitor = new Monitor("1200x600", true, 32);
-            Printer hpPrinter = new Printer("HP", "MP102", 50);
+            Console.WriteLine("Hello World!");
 
-            Vga nvdiaVga = new Vga("Nvidia", 2054, 2054);
-            Ram samsungRam = new Ram("DDR4", 5000, 8000);
-            Processor intelProcessor = new Processor();
-            intelProcessor.setCache(254);
-            intelProcessor.setCore(8);
-            intelProcessor.setSeries("CORE i7 8th Gen");
+            CoffePowder coffe = new CoffePowder(100);
+            WaterGalon water = new WaterGalon(800);
+            Milk milk = new Milk(200);
+            CoffeMechine yummyCoffe = new CoffeMechine(coffe, water, milk);
 
-            Computer computer = new
-                Computer.Builder(samsungRam, nvdiaVga, intelProcessor)//parameter wajib
-                                .withMonitor(lgMonitor)//parameter opsional
-                                .withPrinter(hpPrinter)//parameter opsional
-                                .build();
-            Console.WriteLine(computer.ToString());
+            //1st cup coffe
+            Console.WriteLine("check "+ yummyCoffe.checkAvailability());
+            String result = yummyCoffe.makeEsspresso();
+            Console.WriteLine("result " + result);
+            
+            //2nd cup coffe
+            Console.WriteLine("check "+ yummyCoffe.checkAvailability());
+            result = yummyCoffe.makeCappucino();
+            Console.WriteLine("result " + result);
+            
+            //3nd cup coffe
+            Console.WriteLine("check "+ yummyCoffe.checkAvailability());
+            result = yummyCoffe.makeEsspresso();
+            Console.WriteLine("result " + result);
+            
+            //4nd cup coffe
+            Console.WriteLine("check "+ yummyCoffe.checkAvailability());
+            result = yummyCoffe.makeCappucino();
+            Console.WriteLine("result " + result);
+            
+            //5nd cup coffe
+            Console.WriteLine("check "+ yummyCoffe.checkAvailability());
+            result = yummyCoffe.makeEsspresso();
+            Console.WriteLine("result " + result);
+            
+            //6nd cup coffe
+            Console.WriteLine("check "+ yummyCoffe.checkAvailability());
+            result = yummyCoffe.makeCappucino();
+            Console.WriteLine("result " + result);
+
+            
+            Console.WriteLine("check " + yummyCoffe.checkAvailability());
+
+           
         }
     }
 }
